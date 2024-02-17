@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let a = parseInt(prompt("Enter the First Number : "));
+        let b = parseInt(prompt("Enter the Second Number : "));
+        let result = 0;
+        class Cal {
+            getCal() {
+                let Opr = parseInt(prompt("Enter the Operation Number : "));
+                switch (Opr) {
+                    case 1:
+                        result = a + b;
+                        document.write("Addition : " + result);
+                        break;
+                    case 2:
+                        result = a - b;
+                        document.write("Subtraction : " + result);
+                        break;
+                    case 3:
+                        result = a * b;
+                        document.write("Multiplication : ");
+                        break;
+                    case 4:
+                        result = a / b;
+                        document.write("Division : " + result);
+                        break;
+                    default:
+                        document.write("Invalid Operation Number : ");
+                }
+            }
+        }
+        c = new Cal();
+        c.getCal();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
