@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #fruitList {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        h1 {
+            color: rgb(218, 9, 9);
+        }
+
+        .fruitItem {
+            margin-bottom: 5px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(184, 186, 77, 0.474);
+            color: blueviolet;
+        }
+
+        #addFruitInput {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<script>
+
+    const initialFruits = ["Apple", "Banana", "Orange"];
+
+
+    function initializeFruitList() {
+        const fruitList = document.getElementById("fruitList");
+
+
+        initialFruits.forEach(fruit => {
+            appendFruitToList(fruit);
+        });
+    }
+
+    function addFruit() {
+        const inputElement = document.getElementById("addFruitInput");
+        const fruitName = inputElement.value.trim();
+
+        if (fruitName !== "") {
+            appendFruitToList(fruitName);
+            inputElement.value = "";
+        }
+    }
+    function appendFruitToList(fruitName) {
+        const fruitList = document.getElementById("fruitList");
+        const li = document.createElement("li");
+        li.className = "fruitItem";
+        li.textContent = fruitName;
+        fruitList.appendChild(li);
+    }
+
+    window.onload = initializeFruitList;
+</script>
+
+<body>
+    <h1>Fruit List</h1>
+
+    <ul id="fruitList"></ul>
+
+    <div>
+        <input type="text" id="addFruitInput" placeholder="Enter a fruit name">
+        <button onclick="addFruit()">Add Fruit</button>
+    </div>
+
+</body>
+
+</html>
