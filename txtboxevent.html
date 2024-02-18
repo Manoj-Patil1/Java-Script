@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getData() {
+            document.getElementById('cpwd').value = document.getElementById('pwd').value
+        }
+    </script>
+</head>
+
+<body>
+    <input type="password" placeholder="enter your password" id="pwd" onchange="getData()" /><br />
+    <br>
+    <input type="password" placeholder="confirm password" id="cpwd" disabled />
+    <br />
+
+</body>
+
+</html>
